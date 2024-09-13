@@ -76,7 +76,7 @@ const TodoList = () => {
   };
 
   // Limit todos to a maximum of 5
-  const displayedTodos = todos.slice(0, 5);
+  const displayedTodos = Array.isArray(todos) ? todos.slice(0, 5) : [];
 
   return (
     <>
@@ -92,7 +92,7 @@ const TodoList = () => {
       ) : (
         <>
         {/* If todos exceeds more than 5 tasks then render this message that it can desplay only 5 tasks */}
-          {todos.length > 5 && (
+          {Array.isArray(todos) && todos.length > 5 && (
             <p className="text-red-500 mb-4">Cannot add more tasks. Displaying first 5 tasks only.</p>
           )}
           {displayedTodos.map((item) => (
