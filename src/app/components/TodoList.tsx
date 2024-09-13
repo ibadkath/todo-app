@@ -93,7 +93,7 @@ const TodoList = () => {
         <>
         {/* If todos exceeds more than 5 tasks then render this message that it can desplay only 5 tasks */}
           {Array.isArray(todos) && todos.length > 5 && (
-            <p className="text-red-500 mb-4">Cannot add more tasks. Displaying first 5 tasks only.</p>
+            <p className="text-red-600 font-medium mb-4">Cannot add more tasks. Displaying first 5 tasks only.</p>
           )}
           {displayedTodos.map((item) => (
             <div
